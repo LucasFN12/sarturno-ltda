@@ -1,0 +1,13 @@
+﻿ROUTER
+
+
+* configurar interface g0/0 (192.168.0.1 255.255..255.0)
+* senha da enable (lucascaique*enable)
+* senha console (lucascaique*console)
+* configurar banner (ACESSO APENAS PARA PESSOAS AUTORIZADAS!)
+* configurar interface g0/1 (172.16.0.1 255.255.0.0)
+* configurar SSH (1rede.local) (1024)
+* configurar username (username lucascaique privilege 15 secret 123)
+* criptografar todas as senhas (service password-encryption)
+* criar username ( username lucascaique privilege 15 secret 123)
+* ativar username (console e vty)

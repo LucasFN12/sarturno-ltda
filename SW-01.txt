@@ -1,0 +1,31 @@
+enable
+config t
+hostname SW-01
+banner motd "ATENCAO! APENAS O DEPARTAMENTO DE TI DA EMPRESA SARTUNO LTDA. TEM A AUTORIZACAO PARA ACESSAR ESSE EQUIPAMENTO!"
+enable secret Sarturno*Enable
+line console 0
+password Sarturno*Console
+login
+exit
+interface vlan1
+ip address 172.16.15.254 255.255.255.0
+description INTERFACE DE GERENCIAMENTO
+no shutdown
+exit
+line vty 0 15
+password Sarturno*VTY
+login
+transport input ssh 
+exit
+service password-encryption
+ip default-gateway 172.16.15.1
+ip domain-name sarturno.local
+crypto key generate rsa general-keys modulus 1024
+username sarturnoti privilege 15 secret batata*00
+line console 0
+login local
+exit
+line vty 0 15
+login local
+end
+wr
